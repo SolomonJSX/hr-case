@@ -215,3 +215,14 @@
     drop-shadow(0 64.77px 42.25px rgba(0, 56, 113, 0.20))
     drop-shadow(0 110px 81px rgba(0, 56, 113, 0.24));
 }
+
+.review-card-bg {
+  background-image: url(../img/review-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+
+  @media (min-width: 1024px) {
+    background-position: center;
+  }
+}

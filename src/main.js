@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function refreshAll() {
       if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
+        try {
+          ScrollTrigger.refresh();
+        } catch (err) {
+          // Prevent any unhandled exception from halting JS thread
+        }
       }
     }
 
@@ -27,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: goalSection,
-          start: 'top 75%',
+          start: 'top 85%',
           toggleActions: 'play none none none',
         },
       });
@@ -75,6 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
           '-=0.1'
         );
       }
+
+      const checkGoalVisibility = () => {
+        if (!goalSection) return;
+        const rect = goalSection.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < vh * 0.9) {
+          tl.play();
+        }
+      };
+      checkGoalVisibility();
+      window.addEventListener('scroll', checkGoalVisibility, { passive: true });
     }
 
     const mm = gsap.matchMedia();
@@ -196,78 +211,77 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(revealIfVisible, 150);
       setTimeout(revealIfVisible, 400);
 
+      const resultSection = document.querySelector('.hr-result');
+      if (resultSection) {
+        const parallImg1 = resultSection.querySelector('.result-parall-img');
+        const parallImg2 = resultSection.querySelector('.result-parall-img-2');
+        const parallImg3 = resultSection.querySelector('.result-parall-img-3');
+
+        if (parallImg1) {
+          gsap.fromTo(
+            parallImg1,
+            { y: -60 },
+            {
+              y: 80,
+              ease: 'none',
+              immediateRender: false,
+              lazy: false,
+              scrollTrigger: {
+                trigger: resultSection,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+                invalidateOnRefresh: true,
+              },
+            }
+          );
+        }
+
+        if (parallImg2) {
+          gsap.fromTo(
+            parallImg2,
+            { y: -90 },
+            {
+              y: 70,
+              ease: 'none',
+              immediateRender: false,
+              lazy: false,
+              scrollTrigger: {
+                trigger: resultSection,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.5,
+                invalidateOnRefresh: true,
+              },
+            }
+          );
+        }
+
+        if (parallImg3 && window.innerWidth >= 1536) {
+          gsap.fromTo(
+            parallImg3,
+            { y: -70 },
+            {
+              y: 90,
+              ease: 'none',
+              immediateRender: false,
+              lazy: false,
+              scrollTrigger: {
+                trigger: resultSection,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.4,
+                invalidateOnRefresh: true,
+              },
+            }
+          );
+        }
+      }
+
       return () => {
         
       };
     });
-
-
-    const resultSection = document.querySelector('.hr-result');
-    if (resultSection) {
-      const parallImg1 = resultSection.querySelector('.result-parall-img');
-      const parallImg2 = resultSection.querySelector('.result-parall-img-2');
-      const parallImg3 = resultSection.querySelector('.result-parall-img-3');
-
-      if (parallImg1) {
-        gsap.fromTo(
-          parallImg1,
-          { y: -60 },
-          {
-            y: 80,
-            ease: 'none',
-            immediateRender: false,
-            lazy: false,
-            scrollTrigger: {
-              trigger: resultSection,
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: 1.2,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      }
-
-      if (parallImg2) {
-        gsap.fromTo(
-          parallImg2,
-          { y: -90 },
-          {
-            y: 70,
-            ease: 'none',
-            immediateRender: false,
-            lazy: false,
-            scrollTrigger: {
-              trigger: resultSection,
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: 1.5,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      }
-
-      if (parallImg3) {
-        gsap.fromTo(
-          parallImg3,
-          { y: -70 },
-          {
-            y: 90,
-            ease: 'none',
-            immediateRender: false,
-            lazy: false,
-            scrollTrigger: {
-              trigger: resultSection,
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: 1.4,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      }
-    }
 
 
     window.addEventListener('load', () => {
