@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.config({
         autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load,resize',
       });
-      if (ScrollTrigger.clearScrollMemory) {
-        ScrollTrigger.clearScrollMemory();
-      }
     }
 
     function refreshAll() {
@@ -34,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
           trigger: goalSection,
           start: 'top 75%',
-          once: true,
+          toggleActions: 'play none none none',
         },
       });
 
@@ -111,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           scrollTrigger: {
             trigger: item,
             start: 'top 85%',
-            once: true,
+            toggleActions: 'play none none none',
           },
         });
 
@@ -179,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
           scrollTrigger: {
             trigger: visualBlock,
             start: 'top 85%',
-            once: true,
+            toggleActions: 'play none none none',
           },
         });
 
@@ -244,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 80,
             ease: 'none',
             immediateRender: false,
+            lazy: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
@@ -263,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 70,
             ease: 'none',
             immediateRender: false,
+            lazy: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
@@ -282,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 90,
             ease: 'none',
             immediateRender: false,
+            lazy: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
