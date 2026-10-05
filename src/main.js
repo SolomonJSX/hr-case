@@ -481,5 +481,121 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ==========================================
+  // СЛАЙДЕР ПЛАНШЕТА (.tablet-slider)
+  // ==========================================
+  const tabletSlider = document.querySelector('.tablet-slider');
+  if (tabletSlider) {
+    const track = tabletSlider.querySelector('.tablet-track');
+    const dots = document.querySelectorAll('.tablet-dot');
+    let currentIndex = 0;
+    const totalSlides = 2;
+    let autoplayTimer = null;
+    const AUTOPLAY_DELAY = 4500; // 4.5 секунды
+
+    const goToSlide = (index) => {
+      currentIndex = (index + totalSlides) % totalSlides;
+      const offsetPercent = (currentIndex * 100) / totalSlides;
+      track.style.transform = `translateX(-${offsetPercent}%)`;
+
+      dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+          dot.classList.remove('bg-white');
+          dot.classList.add('bg-[#356DD4]');
+        } else {
+          dot.classList.remove('bg-[#356DD4]');
+          dot.classList.add('bg-white');
+        }
+      });
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, AUTOPLAY_DELAY);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    startAutoplay();
+
+    // Клик по точкам
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        startAutoplay();
+      });
+    });
+
+    // Пауза при наведении
+    tabletSlider.addEventListener('mouseenter', stopAutoplay);
+    tabletSlider.addEventListener('mouseleave', startAutoplay);
+
+    // Touch swipe (мобильные и планшеты)
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    tabletSlider.addEventListener('touchstart', (e) => {
+      stopAutoplay();
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    tabletSlider.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+        if (diffX < 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    // Drag мыши на ПК
+    let mouseStartX = 0;
+    let isMouseDown = false;
+
+    tabletSlider.addEventListener('mousedown', (e) => {
+      stopAutoplay();
+      isMouseDown = true;
+      mouseStartX = e.clientX;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      const diffX = e.clientX - mouseStartX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+      }
+      startAutoplay();
+    });
+
+    // Остановка при сворачивании вкладки
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+  }
 });
 
