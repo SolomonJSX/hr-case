@@ -39,7 +39,7 @@
         <div class="w-full max-w-[500px] lg:max-w-[460px] xl:max-w-[500px] space-y-8 lg:space-y-[40px] xl:space-y-[50px] shrink min-w-0">
             <div>
                 <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                    <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-brandBlue">02</p>
+                    <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-brandBlue">01</p>
                     <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
                 </div>
 
@@ -76,68 +76,46 @@
                 </ul>
             </div>
 
-            <div class="flex items-center justify-between w-full pt-2 lg:pt-0">
-                <div class="goal-step-1 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon1.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
-
-                        <div class="goal-line-1 hidden lg:block absolute left-full top-1/2 -translate-y-1/2">
-                            <svg width="110" height="8" viewBox="0 0 110 8" fill="none" class="w-[60px] xl:w-[110px] h-auto">
-                                <rect y="3" width="110" height="2" fill="url(#paint0_linear_965_786)" />
-                                <circle cx="55" cy="4" r="4" fill="#356DD4" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_965_786" x1="0" y1="4" x2="110" y2="4" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#356DD4" />
-                                        <stop offset="1" stop-color="#356DD4" stop-opacity="0" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
+            <div class="flex items-start justify-between w-full pt-2 lg:pt-0">
+                <div class="goal-step-1 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon1.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         найм
                     </p>
                 </div>
 
-                <div class="goal-step-2 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon2.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
+                <div class="goal-line-1 flex-1 relative z-0 -mx-1 sm:-mx-2 flex items-center h-[58px] sm:h-[72px] lg:h-[76px] xl:h-[90px] min-w-[20px]">
+                    <div class="w-full h-[2px] bg-[linear-gradient(90deg,#356DD4_0%,rgba(53,109,212,0.15)_100%)]"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#356DD4] shrink-0"></div>
+                </div>
 
-                        <div class="goal-line-2 hidden lg:block absolute left-full top-1/2 -translate-y-1/2">
-                            <svg width="110" height="8" viewBox="0 0 110 8" fill="none" class="w-[60px] xl:w-[110px] h-auto">
-                                <rect y="3" width="110" height="2" fill="url(#paint1_linear_965_786)" />
-                                <circle cx="55" cy="4" r="4" fill="#356DD4" />
-                                <defs>
-                                    <linearGradient id="paint1_linear_965_786" x1="0" y1="4" x2="110" y2="4" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#356DD4" />
-                                        <stop offset="1" stop-color="#356DD4" stop-opacity="0" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
+                <div class="goal-step-2 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon2.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         прием
                     </p>
                 </div>
 
-                <div class="goal-step-3 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon3.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
+                <div class="goal-line-2 flex-1 relative z-0 -mx-1 sm:-mx-2 flex items-center h-[58px] sm:h-[72px] lg:h-[76px] xl:h-[90px] min-w-[20px]">
+                    <div class="w-full h-[2px] bg-[linear-gradient(90deg,#356DD4_0%,rgba(53,109,212,0.15)_100%)]"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#356DD4] shrink-0"></div>
+                </div>
+
+                <div class="goal-step-3 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon3.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         адаптация
                     </p>
                 </div>
@@ -151,7 +129,7 @@
     <div class="max-w-[1170px] mx-auto text-white">
         <div class="flex flex-col items-center xl:items-start text-center xl:text-left mb-6 sm:mb-8 lg:mb-[40px]">
             <div class="flex items-center justify-center xl:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-white">03</p>
+                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-white">02</p>
                 <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
             </div>
 
@@ -335,7 +313,7 @@
       <div class="hr-keys relative z-10 translate-y-0 xl:translate-y-[100px] pb-16 md:pb-20 xl:pb-0 px-4 sm:px-6 lg:px-8 xl:px-0">
     <div class="max-w-[1170px] mx-auto flex flex-col items-center text-white">
         <div class="flex items-center justify-center gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-            <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-white">04</p>
+            <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-white">03</p>
             <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
         </div>
 
@@ -534,7 +512,7 @@
         <div class="w-full lg:max-w-[560px] shrink min-w-0 flex flex-col items-center lg:items-start">
             <div class="auto-header-wrap flex flex-col items-center lg:items-start text-center lg:text-left">
                 <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                    <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">05</p>
+                    <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">04</p>
                     <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
                 </div>
 
@@ -568,7 +546,7 @@
 
                 <div class="auto-desc space-y-3 sm:space-y-4 lg:space-y-[22px] max-w-[550px] lg:max-w-[467px] flex-1 min-w-0 text-center lg:text-left">
                     <h6 class="text-xl sm:text-2xl lg:text-[26px] lg:leading-[36px] font-semibold">
-                        Проанализировали текущие HR-процессы
+                        Проанализировали текущие <span class="whitespace-nowrap">HR-процессы</span>
                     </h6>
 
                     <p class="text-base sm:text-lg lg:text-[22px] lg:leading-[30px]">
@@ -716,20 +694,35 @@
 </div>
       <div class="hr-auto-item hr-auto-4 overflow-x-clip px-4 sm:px-6 lg:px-8 xl:px-0">
     <div
-        class="w-full max-w-[1170px] mx-auto xl:max-w-[calc(50%+585px)] xl:mr-auto xl:ml-0 flex flex-col lg:flex-row items-center justify-between xl:justify-end gap-8 lg:gap-[54px] xl:gap-[80px]">
-        <div class="auto-img shrink-0 order-2 lg:order-1 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[440px] xl:max-w-none xl:w-auto h-auto min-w-0 flex flex-col items-center justify-center xl:items-start">
-            <div class="w-full xl:w-auto flex flex-col items-center">
-                <img src="img/tablet.webp" alt="Automization Image"
-                    class="w-full xl:w-auto h-auto block mx-auto xl:ml-0 xl:mr-auto automization-img-shadow">
+        class="w-full max-w-[1170px] mx-auto 2xl:max-w-[calc(50%+585px)] 2xl:mr-auto 2xl:ml-0 flex flex-col lg:flex-row items-center justify-between 2xl:justify-end gap-8 lg:gap-6 xl:gap-10 2xl:gap-[80px]">
+        <div class="auto-img shrink order-2 lg:order-1 w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[420px] xl:max-w-[550px] 2xl:max-w-[665px] h-auto min-w-0 flex flex-col items-center justify-center 2xl:items-start">
+            <div class="w-full flex flex-col items-center">
+                <div class="tablet-slider w-full overflow-hidden select-none cursor-grab active:cursor-grabbing">
+                    <div class="tablet-track flex transition-transform duration-700 ease-in-out w-[200%]">
+                        <div class="tablet-slide w-1/2 shrink-0 flex justify-center">
+                            <img src="img/tablet1-img.webp" alt="Automization Image 1"
+                                draggable="false"
+                                class="w-full h-auto block mx-auto pointer-events-none object-contain">
+                        </div>
+                        <div class="tablet-slide w-1/2 shrink-0 flex justify-center">
+                            <img src="img/tablet2-img.webp" alt="Automization Image 2"
+                                draggable="false"
+                                class="w-full h-auto block mx-auto pointer-events-none object-contain">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex items-center justify-center gap-[17px] mt-3.5 sm:mt-5 lg:mt-[20px]">
-                    <span class="w-[8px] h-[8px] rounded-full bg-[#356DD4] block"></span>
-                    <span class="w-[8px] h-[8px] rounded-full bg-white block"></span>
+                    <button type="button" aria-label="Слайд 1"
+                        class="tablet-dot w-[8px] h-[8px] rounded-full bg-[#356DD4] block transition-colors duration-300 hover:bg-[#356DD4]/80 cursor-pointer p-0 border-0 outline-none"></button>
+                    <button type="button" aria-label="Слайд 2"
+                        class="tablet-dot w-[8px] h-[8px] rounded-full bg-white block transition-colors duration-300 hover:bg-white/80 cursor-pointer p-0 border-0 outline-none"></button>
                 </div>
             </div>
         </div>
 
         <div
-            class="order-1 text-white lg:order-2 w-full lg:max-w-[577px] shrink-0 min-w-0 flex flex-col items-center lg:items-start">
+            class="order-1 text-white lg:order-2 w-full lg:max-w-[490px] xl:max-w-[560px] 2xl:max-w-[577px] shrink min-w-0 flex flex-col items-center lg:items-start">
             <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-[30px] w-full">
                 <div class="flex flex-col items-center w-fit shrink-0">
                     <div
@@ -942,7 +935,7 @@
 
         <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
             <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">06</p>
+                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">05</p>
                 <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
             </div>
 
@@ -953,7 +946,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 xl:gap-x-[40px] xl:gap-y-[30px] justify-items-center w-full relative z-10">
-            <!-- Card 1 -->
             <div
                 class="card-result card-result-1 bg-[url(../img/result-card-1-4-bg.jpg)] bg-cover bg-center bg-no-repeat w-full max-w-[370px] min-h-0 sm:min-h-[500px] xl:min-h-[515px] xl:h-[515px] h-auto shrink-0 pt-[20px] px-5 sm:px-6 lg:px-[30px] pb-6 sm:pb-8 lg:pb-[35px] rounded-[32px] sm:rounded-[40px] flex flex-col items-center">
                     <img src="img/result-1-img.webp" alt="Result Image 1"
@@ -1012,7 +1004,6 @@
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
                 <div
                     class="card-result card-result-2 bg-[url(../img/result-card-2-bg.webp)] bg-cover bg-center bg-no-repeat w-full max-w-[370px] min-h-0 sm:min-h-[500px] xl:min-h-[515px] xl:h-[515px] h-auto shrink-0 pt-[20px] px-5 sm:px-6 lg:px-[30px] pb-6 sm:pb-8 lg:pb-[35px] rounded-[32px] sm:rounded-[40px] flex flex-col items-center">
                     <img src="img/result-2-img.webp" alt="Result Image 2"
@@ -1071,7 +1062,6 @@
                     </ul>
                 </div>
 
-                <!-- Card 3 -->
                 <div
                     class="card-result card-result-3 bg-[url(../img/result-card-3-bg.webp)] bg-cover bg-center bg-no-repeat w-full max-w-[370px] min-h-0 sm:min-h-[500px] xl:min-h-[515px] xl:h-[515px] h-auto shrink-0 pt-[20px] px-5 sm:px-6 lg:px-[30px] pb-6 sm:pb-8 lg:pb-[35px] rounded-[32px] sm:rounded-[40px] flex flex-col items-center">
                     <img src="img/result-3-img.webp" alt="Result Image 3"
@@ -1098,7 +1088,7 @@
                                 </svg>
                             </div>
                             <p class="text-sm sm:text-base lg:text-[16px] lg:leading-[22px]">
-                                В процессы встроены чек-листы и обязательные этапы
+                                В процессы встроены <span class="whitespace-nowrap">чек&#8209;листы</span> и обязательные этапы
                             </p>
                         </li>
                         <li class="flex items-start gap-2.5 sm:gap-[10px]">
@@ -1131,7 +1121,6 @@
                     </ul>
                 </div>
 
-                <!-- Card 4 -->
                 <div
                     class="card-result card-result-4 bg-[url(../img/result-card-1-4-bg.jpg)] bg-cover bg-center bg-no-repeat w-full max-w-[370px] min-h-0 sm:min-h-[500px] xl:min-h-[562px] xl:h-[562px] h-auto shrink-0 pt-[20px] px-5 sm:px-6 lg:px-[30px] pb-6 sm:pb-8 lg:pb-[35px] rounded-[32px] sm:rounded-[40px] flex flex-col items-center">
                     <img src="img/result-4-img.webp" alt="Result Image 4"
@@ -1203,7 +1192,6 @@
                     </ul>
                 </div>
 
-                <!-- Middle Block (Desktop xl+: Floating 3D Graphic + Banner Card) -->
                 <div class="hidden xl:flex w-full max-w-[380px] h-[562px] flex-col items-center justify-end relative shrink-0">
                     <img src="img/middle-result-img.webp" alt="HR-процесс результат"
                         class="w-auto max-w-none h-auto block middle-result-img-shadow absolute top-[-120px] left-1/2 -translate-x-1/2 z-20 pointer-events-none">
@@ -1218,7 +1206,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div
                     class="card-result card-result-5 relative z-10 bg-[url(../img/result-card-5-bg.webp)] bg-cover bg-center bg-no-repeat w-full max-w-[370px] min-h-0 sm:min-h-[500px] xl:min-h-[562px] xl:h-[562px] h-auto shrink-0 pt-[20px] px-5 sm:px-6 lg:px-[30px] pb-6 sm:pb-8 lg:pb-[35px] rounded-[32px] sm:rounded-[40px] flex flex-col items-center">
                     <img src="img/result-5-img.webp" alt="Result Image 5"
@@ -1234,7 +1221,7 @@
                         </p>
                     </div>
 
-                    <p class="w-full text-xs sm:text-[13px] lg:text-[16px] leading-[22px] mb-[14px] text-left">
+                    <p class="w-full text-[13px] lg:text-[16px] leading-[22px] mb-[14px] text-left">
                         Информация о кандидатах и результатах работы с ними сохраняется в единой системе. HR может анализировать:
                     </p>
 
@@ -1294,7 +1281,6 @@
                     </ul>
                 </div>
 
-                <!-- Result Summary Card (Adaptive < xl: Placed last, Blue gradient, No image shadow) -->
                 <div
                     class="result-banner-card flex xl:hidden w-full max-w-[370px] min-h-0 sm:min-h-[500px] h-auto shrink-0 pt-[24px] px-5 sm:px-6 pb-6 sm:pb-8 rounded-[32px] sm:rounded-[40px] flex-col items-center justify-between relative z-10 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
                     <img src="img/middle-result-img.webp" alt="HR-процесс результат"
@@ -1336,7 +1322,7 @@
     <div class="max-w-[1170px] mx-auto">
         <div class="w-full max-w-[560px] lg:max-w-[367px] mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">07</p>
+                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">06</p>
                 <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
             </div>
 
@@ -1359,7 +1345,7 @@
     <div class="max-w-[770px] mx-auto">
         <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
             <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-[34px] mb-4 sm:mb-6 lg:mb-[30px]">
-                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">08</p>
+                <p class="text-base sm:text-lg lg:text-[20px] lg:leading-[28px] font-semibold text-main">07</p>
                 <img src="img/hr-line.png" alt="HR Line" class="w-auto h-auto block">
             </div>
 
@@ -1367,13 +1353,11 @@
         </div>
 
         <div
-            class="flex flex-col items-center gap-6 sm:gap-8 lg:gap-[40px] bg-[url(../img/review-bg.webp)] p-6 sm:p-10 lg:p-[58px] bg-cover bg-no-repeat bg-center rounded-[24px] sm:rounded-[32px] lg:rounded-[40px]">
+            class="flex flex-col items-center gap-6 sm:gap-8 lg:gap-[40px] bg-[url(../img/review-bg.webp)] p-6 sm:p-10 lg:p-[58px] bg-cover bg-no-repeat bg-right-bottom lg:bg-center rounded-[24px] sm:rounded-[32px] lg:rounded-[40px]">
             
-            <!-- Review Slider Container -->
             <div class="review-slider w-full overflow-hidden pt-2 pb-1 select-none cursor-grab active:cursor-grabbing">
                 <div class="review-track flex transition-transform duration-700 ease-in-out w-[200%]">
                     
-                    <!-- Slide 1 -->
                     <div class="review-slide w-1/2 shrink-0">
                         <div class="flex flex-col sm:flex-row gap-5 sm:gap-[30px] items-center sm:items-start justify-between">
                             <div class="w-fit h-fit overflow-hidden rounded-full shrink-0">
@@ -1414,7 +1398,6 @@
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
                     <div class="review-slide w-1/2 shrink-0">
                         <div class="flex flex-col sm:flex-row gap-5 sm:gap-[30px] items-center sm:items-start justify-between">
                             <div class="w-fit h-fit overflow-hidden rounded-full shrink-0">
@@ -1431,25 +1414,12 @@
 
                                 <div class="space-y-2 mb-4 sm:mb-[20px]">
                                     <p class="italic text-sm sm:text-[16px] sm:leading-[24px]">
-                                        С автоматизацией процесса приема новых сотрудников в Битрикс24 всё изменилось, мы убрали
-                                        хаос в
-                                        онбординге. Раньше вручную ставили задачи в разные отделы и постоянно уточняли статус
-                                        выполнения.
-                                    </p>
-                                    <p class="italic text-sm sm:text-[16px] sm:leading-[24px]">
-                                        Теперь весь процесс запускается одной кнопкой и дальше система сама распределяет задачи
-                                        между
-                                        нужными отделами. Доступы и документы теперь готовы вовремя, а новый сотрудник сразу видит,
-                                        что
-                                        и
-                                        когда ему делать, не теряется в первый день. В итоге и нам легче, и новичок быстрее
-                                        включается в
-                                        работу.
+                                        Процесс увольнения теперь полностью систематизирован в Битрикс24: все задачи по передаче дел, закрытию доступов, возврату оборудования и оформлению документов ставятся автоматически и контролируются в одном месте. Сроки расчетов соблюдаются, а сотрудники точно знают, что нужно сделать перед уходом. Процесс стал прозрачнее и проще, расстаёмся грамотно и правильно.
                                     </p>
                                 </div>
 
                                 <p class="text-sm sm:text-[16px] sm:leading-[16px] font-semibold">
-                                    Бизнес-процесс «Прием нового сотрудника»
+                                    Бизнес-процесс «Увольнение сотрудника»
                                 </p>
                             </div>
                         </div>
@@ -1458,7 +1428,6 @@
                 </div>
             </div>
 
-            <!-- Dots Pagination -->
             <div class="flex items-center gap-[17px] review-dots">
                 <button type="button" aria-label="Слайд 1" data-index="0"
                     class="review-dot w-[8px] h-[8px] bg-brandBlue rounded-full transition-all duration-300 p-0 cursor-pointer focus:outline-none"></button>
