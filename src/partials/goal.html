@@ -41,68 +41,46 @@
                 </ul>
             </div>
 
-            <div class="flex items-center justify-between w-full pt-2 lg:pt-0">
-                <div class="goal-step-1 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon1.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
-
-                        <div class="goal-line-1 hidden lg:block absolute left-full top-1/2 -translate-y-1/2">
-                            <svg width="110" height="8" viewBox="0 0 110 8" fill="none" class="w-[60px] xl:w-[110px] h-auto">
-                                <rect y="3" width="110" height="2" fill="url(#paint0_linear_965_786)" />
-                                <circle cx="55" cy="4" r="4" fill="#356DD4" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_965_786" x1="0" y1="4" x2="110" y2="4" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#356DD4" />
-                                        <stop offset="1" stop-color="#356DD4" stop-opacity="0" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
+            <div class="flex items-start justify-between w-full pt-2 lg:pt-0">
+                <div class="goal-step-1 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon1.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         найм
                     </p>
                 </div>
 
-                <div class="goal-step-2 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon2.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
+                <div class="goal-line-1 flex-1 relative z-0 -mx-1 sm:-mx-2 flex items-center h-[58px] sm:h-[72px] lg:h-[76px] xl:h-[90px] min-w-[20px]">
+                    <div class="w-full h-[2px] bg-[linear-gradient(90deg,#356DD4_0%,rgba(53,109,212,0.15)_100%)]"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#356DD4] shrink-0"></div>
+                </div>
 
-                        <div class="goal-line-2 hidden lg:block absolute left-full top-1/2 -translate-y-1/2">
-                            <svg width="110" height="8" viewBox="0 0 110 8" fill="none" class="w-[60px] xl:w-[110px] h-auto">
-                                <rect y="3" width="110" height="2" fill="url(#paint1_linear_965_786)" />
-                                <circle cx="55" cy="4" r="4" fill="#356DD4" />
-                                <defs>
-                                    <linearGradient id="paint1_linear_965_786" x1="0" y1="4" x2="110" y2="4" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#356DD4" />
-                                        <stop offset="1" stop-color="#356DD4" stop-opacity="0" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
+                <div class="goal-step-2 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon2.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         прием
                     </p>
                 </div>
 
-                <div class="goal-step-3 flex flex-col items-center space-y-2 sm:space-y-[10px]">
-                    <div class="relative">
-                        <div
-                            class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
-                            <img src="icons/goal-icon3.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
-                        </div>
+                <div class="goal-line-2 flex-1 relative z-0 -mx-1 sm:-mx-2 flex items-center h-[58px] sm:h-[72px] lg:h-[76px] xl:h-[90px] min-w-[20px]">
+                    <div class="w-full h-[2px] bg-[linear-gradient(90deg,#356DD4_0%,rgba(53,109,212,0.15)_100%)]"></div>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[7px] h-[7px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#356DD4] shrink-0"></div>
+                </div>
+
+                <div class="goal-step-3 flex flex-col items-center space-y-2 sm:space-y-[10px] shrink-0 relative z-10">
+                    <div
+                        class="flex items-center justify-center shrink-0 rounded-full w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] lg:w-[76px] lg:h-[76px] xl:w-[90px] xl:h-[90px] bg-white shadow-[0_20px_30px_0_rgba(153,173,191,0.3)]">
+                        <img src="icons/goal-icon3.svg" alt="Goal Icon" class="w-6 sm:w-8 lg:w-9 xl:w-auto h-auto">
                     </div>
 
-                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium">
+                    <p class="text-xs sm:text-base md:text-lg lg:text-[17px] lg:leading-[24px] xl:text-[20px] xl:leading-[28px] font-medium text-center">
                         адаптация
                     </p>
                 </div>
