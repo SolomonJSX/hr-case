@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap !== 'undefined') {
     if (typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.config({
+        autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load,resize',
+      });
+      if (ScrollTrigger.clearScrollMemory) {
+        ScrollTrigger.clearScrollMemory();
+      }
+    }
+
+    function refreshAll() {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     }
 
     // ==========================================
@@ -215,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // ==========================================
     // СЕКЦИЯ 4: РЕЗУЛЬТАТ (.hr-result) - ПАРАЛЛАКС
     // ==========================================
     const resultSection = document.querySelector('.hr-result');
@@ -230,11 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             y: 80,
             ease: 'none',
+            immediateRender: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
               end: 'bottom top',
               scrub: 1.2,
+              invalidateOnRefresh: true,
             },
           }
         );
@@ -247,11 +262,13 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             y: 70,
             ease: 'none',
+            immediateRender: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
               end: 'bottom top',
               scrub: 1.5,
+              invalidateOnRefresh: true,
             },
           }
         );
@@ -264,11 +281,13 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             y: 90,
             ease: 'none',
+            immediateRender: false,
             scrollTrigger: {
               trigger: resultSection,
               start: 'top bottom',
               end: 'bottom top',
               scrub: 1.4,
+              invalidateOnRefresh: true,
             },
           }
         );
@@ -276,22 +295,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // ГАРАНТИЯ ОБНОВЛЕНИЯ КООРДИНАТ ПРИ ЗАГРУЗКЕ
+    // ГАРАНТИЯ ОБНОВЛЕНИЯ КООРДИНАТ ПРИ ЗАГРУЗКЕ И ОБНОВЛЕНИИ (F5)
     // ==========================================
-    const refreshAll = () => {
-      if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.refresh();
-      }
-    };
-
+    // Слушатели на завершение загрузки окна и шрифтов
     window.addEventListener('load', () => {
       refreshAll();
-      setTimeout(refreshAll, 200);
-      setTimeout(refreshAll, 600);
+      [100, 300, 600, 1000].forEach((delay) => setTimeout(refreshAll, delay));
     });
 
     if (document.fonts) {
       document.fonts.ready.then(refreshAll);
+    }
+
+    // Обновление ScrollTrigger по мере загрузки картинок
+    document.querySelectorAll('img').forEach((img) => {
+      if (!img.complete) {
+        img.addEventListener('load', refreshAll, { once: true });
+        img.addEventListener('error', refreshAll, { once: true });
+      }
+    });
+
+    // Автоматическое обновление при любых сдвигах высоты страницы (DOM/ассеты)
+    if (window.ResizeObserver) {
+      let roTimer;
+      const ro = new ResizeObserver(() => {
+        clearTimeout(roTimer);
+        roTimer = setTimeout(refreshAll, 60);
+      });
+      ro.observe(document.body);
     }
   }
 
@@ -307,6 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
         banner2.style.marginBottom = `-${halfH}px`;
       } else {
         banner2.style.marginBottom = '';
+      }
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
       }
     };
     syncBanner2Offset();
