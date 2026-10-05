@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ==========================================
-    // СЕКЦИЯ 1: ЦЕЛЬ ПРОЕКТА (.hr-goal)
-    // ==========================================
     const goalSection = document.querySelector('.hr-goal');
     if (goalSection) {
       const step1 = goalSection.querySelector('.goal-step-1');
@@ -35,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       });
 
-      // 1. Появление шага "найм"
       if (step1) {
         tl.fromTo(
           step1,
@@ -44,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
 
-      // 2. Отрисовка соединительной линии "найм -> прием"
       if (line1) {
         tl.fromTo(
           line1,
@@ -54,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
 
-      // 3. Появление шага "прием"
       if (step2) {
         tl.fromTo(
           step2,
@@ -64,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
 
-      // 4. Отрисовка соединительной линии "прием -> адаптация"
       if (line2) {
         tl.fromTo(
           line2,
@@ -74,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
 
-      // 5. Появление шага "адаптация"
       if (step3) {
         tl.fromTo(
           step3,
@@ -85,12 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ==========================================
-    // ==========================================
-    // СЕКЦИЯ 2: АВТОМАТИЗАЦИЯ (.hr-auto-item)
-    // Анимация активна ТОЛЬКО когда экран больше или равен xl (>= 1280px).
-    // Если меньше xl (< 1280px) анимация отключена (элементы статичны).
-    // ==========================================
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 1280px)', () => {
@@ -114,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         timelines.push({ el: item, tl });
 
-        // Заголовок "05 Как происходила автоматизация" (в 1-м блоке)
         if (header) {
           tl.fromTo(
             header,
@@ -123,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         }
 
-        // 1. Появление круглого бейджа шага (01, 02, 03) с легкой упругостью
         if (badge) {
           tl.fromTo(
             badge,
@@ -133,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         }
 
-        // 2. Рисование вертикальной SVG линии сверху вниз
         if (line) {
           tl.fromTo(
             line,
@@ -143,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         }
 
-        // 3. Плавное появление описания и цитаты
         if (desc) {
           const fromLeft = index % 2 === 0;
           tl.fromTo(
@@ -154,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
           );
         }
 
-        // 4. Появление 3D-иллюстрации
         if (img) {
           const imgFromRight = index % 2 === 0;
           tl.fromTo(
@@ -166,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Финал: появление ноутбука справа и цветка слева
       const visualBlock = document.querySelector('.hr-auto-visual');
       if (visualBlock) {
         const laptop = visualBlock.querySelector('.auto-laptop');
@@ -200,8 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Проверка видимости при обновлении (F5):
-      // Если страница уже проскроллена к блокам, немедленно отображаем их
       const revealIfVisible = () => {
         const vh = window.innerHeight || document.documentElement.clientHeight;
         timelines.forEach(({ el, tl }) => {
@@ -219,14 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(revealIfVisible, 400);
 
       return () => {
-        // Очистка анимаций при ресайзе экрана выше 2xl
+        
       };
     });
 
-    // ==========================================
-    // ==========================================
-    // СЕКЦИЯ 4: РЕЗУЛЬТАТ (.hr-result) - ПАРАЛЛАКС
-    // ==========================================
+
     const resultSection = document.querySelector('.hr-result');
     if (resultSection) {
       const parallImg1 = resultSection.querySelector('.result-parall-img');
@@ -294,10 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ==========================================
-    // ГАРАНТИЯ ОБНОВЛЕНИЯ КООРДИНАТ ПРИ ЗАГРУЗКЕ И ОБНОВЛЕНИИ (F5)
-    // ==========================================
-    // Слушатели на завершение загрузки окна и шрифтов
+
     window.addEventListener('load', () => {
       refreshAll();
       [100, 300, 600, 1000].forEach((delay) => setTimeout(refreshAll, delay));
@@ -307,7 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.fonts.ready.then(refreshAll);
     }
 
-    // Обновление ScrollTrigger по мере загрузки картинок
     document.querySelectorAll('img').forEach((img) => {
       if (!img.complete) {
         img.addEventListener('load', refreshAll, { once: true });
@@ -315,7 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Автоматическое обновление при любых сдвигах высоты страницы (DOM/ассеты)
     if (window.ResizeObserver) {
       let roTimer;
       const ro = new ResizeObserver(() => {
@@ -326,10 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ==========================================
-  // СИНХРОНИЗАЦИЯ НАХЛЕСТА BANNER-2 (50% НАХЛЕСТ И РОВНО 100PX ОТСТУП СНИЗУ)
-  // ТОЛЬКО НА ЭКРАНАХ >= 2xl (>= 1536px)
-  // ==========================================
+
   const banner2 = document.querySelector('.hr-banner-2');
   if (banner2) {
     const syncBanner2Offset = () => {
@@ -351,9 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ==========================================
-  // СЛАЙДЕР В СЕКЦИИ ОТЗЫВ (.hr-review)
-  // ==========================================
+
   const reviewSlider = document.querySelector('.hr-review .review-slider');
   if (reviewSlider) {
     const track = reviewSlider.querySelector('.review-track');
@@ -394,10 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Автоматический запуск слайдера
     startAutoplay();
 
-    // Клик по точкам
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         goToSlide(i);
@@ -405,11 +368,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Пауза при наведении курсора
+
     reviewSlider.addEventListener('mouseenter', stopAutoplay);
     reviewSlider.addEventListener('mouseleave', startAutoplay);
 
-    // Touch swipe (смартфоны и планшеты)
+
     let touchStartX = 0;
     let touchStartY = 0;
 
@@ -435,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     }, { passive: true });
 
-    // Drag мыши на ПК
+
     let mouseStartX = 0;
     let isMouseDown = false;
 
@@ -459,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     });
 
-    // Клавиатура (стрелки)
+
     reviewSlider.setAttribute('tabindex', '0');
     reviewSlider.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') {
@@ -472,7 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Остановка при сворачивании вкладки
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         stopAutoplay();
@@ -482,9 +444,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==========================================
-  // СЛАЙДЕР ПЛАНШЕТА (.tablet-slider)
-  // ==========================================
   const tabletSlider = document.querySelector('.tablet-slider');
   if (tabletSlider) {
     const track = tabletSlider.querySelector('.tablet-track');
@@ -526,7 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoplay();
 
-    // Клик по точкам
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         goToSlide(i);
@@ -534,11 +492,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Пауза при наведении
     tabletSlider.addEventListener('mouseenter', stopAutoplay);
     tabletSlider.addEventListener('mouseleave', startAutoplay);
 
-    // Touch swipe (мобильные и планшеты)
+
     let touchStartX = 0;
     let touchStartY = 0;
 
@@ -564,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     }, { passive: true });
 
-    // Drag мыши на ПК
+
     let mouseStartX = 0;
     let isMouseDown = false;
 
@@ -588,7 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoplay();
     });
 
-    // Остановка при сворачивании вкладки
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         stopAutoplay();
